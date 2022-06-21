@@ -9,5 +9,6 @@ const router = Router();
 
 //routers with middleware functions
 router.use("./notes", notes);
+
 // export file
 module.exports = router;

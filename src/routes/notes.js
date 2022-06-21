@@ -9,7 +9,7 @@ const router = Router();
 
 //routers with middleware functions
 router.get("/", getNotes);
-router.delete("/:id", deleteNotes);
+router.delete("/:noteId", deleteNotes);
 router.post("/", createNotes);
 
 // export file
