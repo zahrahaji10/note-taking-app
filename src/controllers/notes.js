@@ -1,9 +1,14 @@
+const { readDataFromFile, writeDataToFile } = require("../utils/read-write");
+
 // controller fn to get notes
-const getNotes = () => {
+const getNotes = (req, res) => {
   // read from data file
+  const displayNotes = readDataFromFile(notes);
+
+  console.log(notes);
 
   // return data
-  return res.json();
+  return res.json(displayNotes);
 };
 
 // controller fn to delete notes
