@@ -8,7 +8,7 @@ const notes = require("./notes");
 const router = Router();
 
 //routers with middleware functions
-router.use("./notes", notes);
+router.use("/notes", notes);
 
 // export file
 module.exports = router;

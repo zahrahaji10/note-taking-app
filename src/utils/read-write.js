@@ -2,16 +2,16 @@ const fs = require("fs");
 const path = require("path");
 
 // fn to read from file
-const readDataFromFile = (fileName) => {
-  const filePath = path.join(__dirname, `../data/${fileName}.json`);
+const readDataFromFile = () => {
+  const filePath = path.join(__dirname, `../data/notes.json`);
 
   const rawData = fs.readFileSync(filePath, "utf8");
 
   return JSON.parse(rawData);
 };
 
-const writeDataToFile = (fileName, data) => {
-  const filePath = path.join(__dirname, `../data/${fileName}.json`);
+const writeDataToFile = (notes, data) => {
+  const filePath = path.join(__dirname, `../data/notes.json`);
 
   // write data to file
   fs.writeFileSync(filePath, JSON.stringify(data));
