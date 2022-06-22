@@ -3,11 +3,15 @@ const path = require("path");
 
 // fn to read from file
 const readDataFromFile = () => {
-  const filePath = path.join(__dirname, `../data/notes.json`);
+  try {
+    const filePath = path.join(__dirname, `../data/notes.json`);
 
-  const rawData = fs.readFileSync(filePath, "utf8");
+    const rawData = fs.readFileSync(filePath, "utf8");
 
-  return JSON.parse(rawData);
+    return JSON.parse(rawData);
+  } catch (error) {
+    console.log(`[ERROR: Failed to read data from file | ${error.message}]`);
+  }
 };
 
 const writeDataToFile = (data) => {
@@ -20,7 +24,7 @@ const writeDataToFile = (data) => {
 
     // display an error message if unable to write file
   } catch (error) {
-    console.log(error.message);
+    console.log(`[ERROR: Failed to write data from file | ${error.message}]`);
   }
 };
 
