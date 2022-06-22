@@ -48,7 +48,6 @@ const createNotes = (req, res) => {
 
   // get notes from file
   let notesData = readDataFromFile();
-  console.log(notesData);
 
   // push to array
   notesData.push(note);
