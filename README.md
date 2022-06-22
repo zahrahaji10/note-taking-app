@@ -14,9 +14,15 @@ Developing a note taking application using express to write and save notes.
 
 ## Heroku Deployed Application link
 
+[Application Link ](https://young-bayou-05347.herokuapp.com/)
+
 ## Application Diagram
 
+![image](https://user-images.githubusercontent.com/102627226/175176372-8c56ce65-889a-4f4e-bd93-ad8cb3f53970.png)
+
 ### Video Demonstration
+
+[Video Demonstration](https://drive.google.com/file/d/1BSCN1jqnVwTkgOlRgmOVBdK_InTMCZ0r/view)
 
 ### Question
 
