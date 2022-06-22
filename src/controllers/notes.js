@@ -31,14 +31,15 @@ const deleteNotes = (req, res) => {
 };
 
 // controller fn to create notes
-const createNotes = (res, req) => {
+const createNotes = (req, res) => {
+  console.log(req.body);
   // add post body request
   const { title, text } = req.body;
 
   // create id for each new note
-
   const id = uuidv4();
 
+  // create a payload for new notes
   const note = {
     id,
     title,
@@ -46,13 +47,14 @@ const createNotes = (res, req) => {
   };
 
   // get notes from file
-  const notesData = readDataFromFile(note);
+  let notesData = readDataFromFile();
+  console.log(notesData);
 
   // push to array
-  notesData.notes.push(note);
+  notesData.push(note);
 
   // write back to file
-  writeDataToFile();
+  writeDataToFile(notesData);
 
   // return response
   return res.json(notesData);
