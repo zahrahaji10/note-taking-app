@@ -13,9 +13,19 @@ const getNotes = (req, res) => {
 };
 
 // controller fn to delete notes
-const deleteNotes = () => {
-  // get id from request
+const deleteNotes = (req, res) => {
+  // get id from request params
+  const { id } = req.params;
+
+  // get notes from file
+  const notesData = readDataFromFile();
+
   // find note by id
+  const note = notes.find((note) => note.id === id);
+
+  if (!note) {
+  }
+
   // return response
   return;
 };
@@ -25,6 +35,10 @@ const createNotes = (res, req) => {
   // add post body request
   const { title, text } = req.body;
 
+  // create id for each new note
+
+  const id = uuidv4();
+
   const note = {
     id,
     title,
@@ -32,13 +46,17 @@ const createNotes = (res, req) => {
   };
 
   // get notes from file
+  const notesData = readDataFromFile();
 
   // push to array
+  notesData.notes.push(notes);
 
   // write back to file
+  writeDataToFile();
 
   // return response
   return;
+  res.json();
 };
 
 // export functions

@@ -9,7 +9,7 @@ const routes = require("./routes");
 const app = express();
 
 // declare port
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 // middleware functions
 app.use(express.json());
