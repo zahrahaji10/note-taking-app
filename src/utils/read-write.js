@@ -10,11 +10,18 @@ const readDataFromFile = () => {
   return JSON.parse(rawData);
 };
 
-const writeDataToFile = (notes, data) => {
-  const filePath = path.join(__dirname, `../data/notes.json`);
+const writeDataToFile = (data) => {
+  try {
+    // create path to write to notes file
+    const filePath = path.join(__dirname, `../data/notes.json`);
 
-  // write data to file
-  fs.writeFileSync(filePath, JSON.stringify(data));
+    // write data to file
+    fs.writeFileSync(filePath, JSON.stringify(data));
+
+    // display an error message if unable to write file
+  } catch (error) {
+    console.log(error.message);
+  }
 };
 
 // export read and write functions

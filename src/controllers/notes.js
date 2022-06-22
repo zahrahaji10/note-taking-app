@@ -20,14 +20,14 @@ const deleteNotes = (req, res) => {
   // get notes from file
   const notesData = readDataFromFile();
 
-  // find note by id
-  const note = notes.find((note) => note.id === id);
+  // filter array and remove note from array
+  const filteredNotes = notesData.filter((note) => note.id !== id);
 
-  if (!note) {
-  }
+  // write back to data file
+  writeDataToFile(filteredNotes);
 
   // return response
-  return;
+  return res.json(notesData);
 };
 
 // controller fn to create notes
@@ -46,17 +46,16 @@ const createNotes = (res, req) => {
   };
 
   // get notes from file
-  const notesData = readDataFromFile();
+  const notesData = readDataFromFile(note);
 
   // push to array
-  notesData.notes.push(notes);
+  notesData.notes.push(note);
 
   // write back to file
   writeDataToFile();
 
   // return response
-  return;
-  res.json();
+  return res.json(notesData);
 };
 
 // export functions
