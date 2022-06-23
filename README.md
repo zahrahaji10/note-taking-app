@@ -18,7 +18,7 @@ Developing a note taking application using express to write and save notes.
 
 ## Application Diagram
 
-![image](https://user-images.githubusercontent.com/102627226/175176372-8c56ce65-889a-4f4e-bd93-ad8cb3f53970.png)
+![clientserver](https://user-images.githubusercontent.com/102627226/175285307-99f92ea3-cab8-44b4-ac2f-3e3c6f9930e5.png)
 
 ### Video Demonstration
 
