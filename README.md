@@ -10,7 +10,7 @@
 
 ## Description
 
-Developing a backend server for a note taking application using express to create and save and delete notes.
+Developing a backend server for a note taking application using express to create, save and delete notes.
 
 ## Heroku Deployed Application link
 
